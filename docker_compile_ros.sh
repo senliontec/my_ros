@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# for Ubuntu 22.04 & ROS2 最新版， 注：可用 glados 先翻墙
+
 # 1. Set locale
 
 apt update && apt install locales -y
