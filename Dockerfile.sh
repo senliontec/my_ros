@@ -20,7 +20,8 @@ export LANG=en_US.UTF-8
 
 
 apt update &&  apt install curl gnupg lsb-release -y
-curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+# curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+cp ./ros.key /usr/share/keyrings/ros-archive-keyring.gpg
 
 
 # 4. Then add the repository to your sources list.
@@ -57,13 +58,15 @@ apt update && apt install -y \
 # 6. Get ROS 2 code
 
 mkdir -p ~/ros2_humble/src
+cp ./ros2.repos ~/ros2_humble
 cd ~/ros2_humble
-wget https://raw.githubusercontent.com/ros2/ros2/humble/ros2.repos
-vcs import src < ros2.repos
+# wget https://raw.githubusercontent.com/ros2/ros2/humble/ros2.repos
+# vcs import src < ros2.repos
+cp -r ./src/* ~/ros2_humble/src
 
 # 7. Install dependencies using rosdep
 
-apt upgrade
+apt upgrade -y
 
 rosdep init
 rosdep update
