@@ -10,11 +10,14 @@ def get_repositoryname(filename):
             if str.find("url") != -1:
                 str = str.replace("url:","").strip()
                 command = 'git clone -b humble --recursive ' + str
+                retval = os.getcwd()
+                os.chdir('./src/')
                 os.system(command)
+                os.chdir(retval)
 
 
 
 
 if __name__=='__main__':
-    filename = './src/ros2.repos'
+    filename = './ros2.repos'
     address = get_repositoryname(filename)
