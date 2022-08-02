@@ -11,7 +11,7 @@ def get_repositoryname(filename):
             type = contents[i * 4 + 2].strip()
             url  = contents[i * 4 + 3].replace('url:','').strip()
             version = contents[i * 4 + 4].replace('version:','').strip()
-            command = 'git clone -b {} --recursive {}'.format(version, url)
+            command = 'git clone -b {} --recursive {}'.format(version, url) + ' --config "http.proxy=127.0.0.1:7890"'
             retval = os.getcwd()
             os.chdir('./src/')
             print('{} :--------------------------'.format(i))
