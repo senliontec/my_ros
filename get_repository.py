@@ -14,7 +14,7 @@ def get_repositoryname(filename):
     with open(filename,'r') as f:
         contents = f.readlines()
 
-        for i in range(0,len(contents) // 4):
+        for i in range(7,len(contents) // 4):
             key  = contents[i * 4 + 1].strip()
             directory ='./src/' + key.split('/')[0]
             mkdir(directory)

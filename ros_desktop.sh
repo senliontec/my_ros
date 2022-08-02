@@ -36,7 +36,7 @@ sudo apt update && sudo apt install -y \
   git \
   python3-colcon-common-extensions \
   python3-pip \
-  python3-rosdep2 \
+  python3-rosdep \
   python3-vcstool \
   wget
 # install some pip packages needed for testing
@@ -92,3 +92,20 @@ colcon build --symlink-install
 # Replace ".bash" with your shell if you're not using bash
 # Possible values are: setup.bash, setup.sh, setup.zsh
 . ~/ros2_humble/install/local_setup.bash
+
+
+#解决办法：
+
+#将原有的nameserver这一行注释，并添加以下两行：
+
+#nameserver 8.8.8.8 #google域名服务器
+
+#nameserver 8.8.4.4 #google域名服务器
+
+
+# pip install catkin_pkg
+
+# python -m pip install empy
+
+# python -m pip install lark-parser
+# 
