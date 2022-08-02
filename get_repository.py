@@ -14,7 +14,7 @@ def get_repositoryname(filename):
             command = 'git clone -b {} --recursive {}'.format(version, url)
             retval = os.getcwd()
             os.chdir('./src/')
-            print('--------------------------')
+            print('{} :--------------------------'.format(i))
             print(command)
             os.system(command)
             os.chdir(retval)
