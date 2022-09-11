@@ -1,0 +1,8 @@
+解决rosdep update
+https://blog.csdn.net/Kenny_GuanHua/article/details/116845781
+升级 cmake https://zhuanlan.zhihu.com/p/93480024
+
+改国内源 
+改github 镜像
+改hosts，添加raw.github接口
+修改python2.7中的文件，增加github的代理接口
